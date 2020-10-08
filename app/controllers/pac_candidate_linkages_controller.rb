@@ -1,0 +1,2 @@
+class PacCandidateLinkagesController < ApplicationController
+end

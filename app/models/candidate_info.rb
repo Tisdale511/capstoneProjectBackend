@@ -1,0 +1,2 @@
+class CandidateInfo < ApplicationRecord
+end

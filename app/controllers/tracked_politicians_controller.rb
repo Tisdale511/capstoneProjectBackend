@@ -1,0 +1,2 @@
+class TrackedPoliticiansController < ApplicationController
+end

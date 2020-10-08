@@ -1,0 +1,2 @@
+class PacInfo < ApplicationRecord
+end

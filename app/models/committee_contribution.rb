@@ -1,0 +1,2 @@
+class CommitteeContribution < ApplicationRecord
+end

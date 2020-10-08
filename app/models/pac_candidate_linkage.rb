@@ -1,0 +1,2 @@
+class PacCandidateLinkage < ApplicationRecord
+end

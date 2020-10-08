@@ -1,0 +1,2 @@
+class TrackedPolitician < ApplicationRecord
+end

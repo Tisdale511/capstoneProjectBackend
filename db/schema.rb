@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 2020_10_08_171053) do
     t.float "linkage_id"
   end
 
-  create_table "pac_infos", id: false, force: :cascade do |t|
+  create_table "pac_infos" force: :cascade do |t|
     t.bigserial "id", null: false
     t.string "committee_id"
     t.string "committee_name"

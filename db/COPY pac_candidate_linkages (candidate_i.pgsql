@@ -1,0 +1,1 @@
+COPY pac_candidate_linkages (candidate_id, candidate_election_year, fec_election_year, committee_id, committee_type, committee_designation, linkage_id) from '/Users/tisdalefry/Desktop/mod5Project/capstone-backend-api/pac_candidate_linkages.txt' DELIMITER '|' CSV;

@@ -1,4 +1,4 @@
-class PacInfosController < ApplicationController
+class Api::V1::PacInfosController < ApplicationController
     def index
         pac_infos = PacInfo.all
         render json: pac_infos

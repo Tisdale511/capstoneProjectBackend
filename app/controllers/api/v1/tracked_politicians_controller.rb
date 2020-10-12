@@ -1,4 +1,4 @@
-class TrackedPoliticiansController < ApplicationController
+class Api::V1::TrackedPoliticiansController < ApplicationController
     
     def index
         tracked_politicians = User.all

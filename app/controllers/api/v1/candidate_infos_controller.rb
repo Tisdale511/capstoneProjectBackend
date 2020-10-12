@@ -1,4 +1,4 @@
-class CandidateInfosController < ApplicationController
+class Api::V1::CandidateInfosController < ApplicationController
 
     def index
         candidate_infos = CandidateInfo.all

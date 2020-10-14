@@ -4,6 +4,23 @@ class Api::V1::CandidateInfosController < ApplicationController
         candidate_infos = CandidateInfo.all
         render json: candidate_infos
     end
+    
+    def parsed_candidate_info 
+        parsed_candidate_info = CandidateInfo.parsed_candidate_info
+        render json: parsed_candidate_info
+    end
+    
+    # def incumbent_house_candidate_info = CandidateInfo.select(:id, :candidate_name, :candidate_id, :candidate_office_state, :candidate_office_district, :candidate_party_affiliation, ).where(candidate_office: "H", candidate_incumbent_challenger_open_seat: "I" )
+    #     render :json => incumbent_house_candidate_info
+    # end
+
+    # def challenger_senator_candidate_info = CandidateInfo.select(:id, :candidate_name, :candidate_id, :candidate_office_state, :candidate_office_district, :candidate_party_affiliation, ).where(:candidate_office: "S", candidate_incumbent_challenger_open_seat: "C" )
+    #     render :json => challenger_senator_candidate_info
+    # end
+
+    # def challenger_house_candidate_info = CandidateInfo.select(:id, :candidate_name, :candidate_id, :candidate_office_state, :candidate_office_district, :candidate_party_affiliation, ).where(:candidate_office: "H", candidate_incumbent_challenger_open_seat: "C" )
+    #     render :json => challenger_house_candidate_info
+    # end
 
     def show
         candidate_info = CandidateInfo.find(params[:id])

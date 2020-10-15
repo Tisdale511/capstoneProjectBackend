@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-    # before_action :authorize_action
+    before_action :authorize_action
     # private
     def token
       request.headers['Authorization']

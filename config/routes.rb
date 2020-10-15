@@ -8,9 +8,9 @@ Rails.application.routes.draw do
       resources :pac_candidate_linkages
       resources :pac_infos, only: [:index, :show]
       post '/signup', to: 'user#create'
-      get '/parsed_contribution_info', to: 'committee_contribution#parsed_contribution_info'
-      get '/parsed_candidate_info', to: 'candidate_info#parsed_candidate_info'
-      get '/parsed_pac_info', to: 'pac_info#parsed_pac_info'
+      get '/parsed_contribution_info', to: 'committee_contributions#parsed_contribution_info'
+      get '/candidate_search_district_number_and_state', to: 'candidate_infos#candidate_search_district_number_and_state'
+      get '/parsed_pac_info', to: 'pac_infos#parsed_pac_info'
     end
   end
    post '/login', to: 'token#create' 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_09_042124) do
+ActiveRecord::Schema.define(version: 2020_10_22_161710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,8 @@ ActiveRecord::Schema.define(version: 2020_10_09_042124) do
     t.string "memo_code"
     t.string "memo_text"
     t.string "fec_record_number"
+    t.integer "candidate_info_id"
+    t.integer "pac_info_id"
   end
 
   create_table "loans", force: :cascade do |t|
@@ -112,8 +114,7 @@ ActiveRecord::Schema.define(version: 2020_10_09_042124) do
     t.float "linkage_id"
   end
 
-  create_table "pac_infos", id: false, force: :cascade do |t|
-    t.bigserial "id", null: false
+  create_table "pac_infos", force: :cascade do |t|
     t.string "committee_id"
     t.string "committee_name"
     t.string "committee_type"

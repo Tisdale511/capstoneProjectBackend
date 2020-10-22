@@ -30,7 +30,7 @@ class CommitteeContribution < ApplicationRecord
 
 
     def self.find_all_committees_to_candidate(candidate_id)
-        all_contribution_hashes = all.where(candidate_id: candidate_id)
+        all_contribution_hashes = self.where(candidate_id: candidate_id)
         all_committee_ids = []
         all_contribution_hashes.each do |contribution|
             all_committee_ids << contribution.committee_id
@@ -43,7 +43,7 @@ class CommitteeContribution < ApplicationRecord
         # iterate over aforementioned array, for each id, create new hash
         # set key to current ele to candidate_id, then run totals method and assign to value of hash
         # push each hash into the array, return the array of hashes
-        committee_ids = find_all_committees_to_candidate(candidate_id)
+        committee_ids = find_all_committees_to_candidate(candidate_id).
         # transaction_totals = committee_contribution_totals(candidate_id, committee_id)
         transaction_array = [];
         committee_ids.map do |committee_id|
@@ -62,7 +62,7 @@ class CommitteeContribution < ApplicationRecord
     end
 
     def self.all_contributions_to_candidate(candidate_id, committee_id)
-        all.where(candidate_id: candidate_id, committee_id: committee_id)
+        where(candidate_id: candidate_id, committee_id: committee_id)
     end
 
 end

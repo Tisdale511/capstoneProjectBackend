@@ -4,9 +4,10 @@ class Api::V1::CandidateInfosController < ApplicationController
         candidate_infos = CandidateInfo.all
         render json: candidate_infos
     end
+
     
     def candidate_search_district_number_and_state 
-        candidate_search_district_number_and_state = CandidateInfo.candidate_search_district_number_and_state(params[:state], params[:number])
+        candidate_search_district_number_and_state = CandidateInfo.candidate_search_district_number_and_state(params[:state], params[:district])
         render json: candidate_search_district_number_and_state
     end
     

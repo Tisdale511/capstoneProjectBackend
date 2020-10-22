@@ -7,12 +7,12 @@ Rails.application.routes.draw do
       resources :candidate_infos, only: [:index, :show]
       resources :pac_candidate_linkages
       resources :pac_infos, only: [:index, :show]
-      post '/signup', to: 'user#create'
       get '/parsed_contribution_info', to: 'committee_contributions#parsed_contribution_info'
-      get '/candidate_search_district_number_and_state', to: 'candidate_infos#candidate_search_district_number_and_state'
+      post '/candidate_search_district_number_and_state', to: 'candidate_infos#candidate_search_district_number_and_state'
       get '/parsed_pac_info', to: 'pac_infos#parsed_pac_info'
     end
   end
+  post '/signup', to: 'user#create'
    post '/login', to: 'token#create' 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

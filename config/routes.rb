@@ -12,7 +12,8 @@ Rails.application.routes.draw do
       get '/parsed_pac_info', to: 'pac_infos#parsed_pac_info'
     end
   end
+  post '/autoLogin', to: 'token#auto_login'
   post '/signup', to: 'user#create'
-   post '/login', to: 'token#create' 
+  post '/login', to: 'token#create' 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

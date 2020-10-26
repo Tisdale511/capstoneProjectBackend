@@ -15,6 +15,6 @@ class CandidateInfo < ApplicationRecord
     end
 
     def self.candidate_search_district_number_and_state(state, district_number)
-        select(:id, :candidate_name, :candidate_id, :candidate_office_state, :candidate_office_district, :candidate_party_affiliation, :candidate_office, :candidate_incumbent_challenger_open_seat).where(candidate_office_state: state, candidate_office_district: district_number)
+        select(:id, :candidate_name, :candidate_id, :candidate_office_state, :candidate_office_district, :candidate_party_affiliation, :candidate_office, :candidate_incumbent_challenger_open_seat).where(candidate_office_state: state, candidate_office_district: [district_number, '00'])
     end
 end

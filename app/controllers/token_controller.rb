@@ -8,7 +8,7 @@ class TokenController < ApplicationController
         render json: { error: "Password invalid." }, status: 401
         end
         token = self.issue_token(@user)
-        render json: { token: token }
+        render json: { token: token, tracked: @user.candidate_infos }, status: 200
     end
 
     def auto_login
@@ -24,7 +24,7 @@ class TokenController < ApplicationController
         end
 
         if @user
-            render json: {success: "Login successful"}, status: 200
+            render json: {success: "Login successful", tracked: @user.candidate_infos}, status: 200
         end        
     end
     

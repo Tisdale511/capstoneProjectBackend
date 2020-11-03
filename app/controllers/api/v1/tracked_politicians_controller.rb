@@ -11,8 +11,22 @@ class Api::V1::TrackedPoliticiansController < ApplicationController
     end
 
     def create
-        tracked_politician = TrackedPoliticians.create(user_id: params[:tracked_politician][:user_id], candidate_info_id: params[:tracked_politician][:candidate_info_id])
-        render json: tracked_politician
+        current = self.request_user
+        if current
+            TrackedPolitician.create(candidate_info_id: params[:id], user_id: current.id)
+            render json: { tracked: current.candidate_infos }, status: 200
+        else
+            render json: { errors: 'Something Happened' }, status: 404
+        end
     end
 
+    def destroy
+        current = self.request_user
+        if current
+            TrackedPolitician.where(user: current, candidate_info_id: params[:id]).destroy_all
+            render json: { tracked: current.candidate_infos }, status: 200
+        else
+            render json: { errors: 'Something Happened' }, status: 404
+        end
+    end
 end

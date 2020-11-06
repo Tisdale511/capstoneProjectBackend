@@ -21,7 +21,7 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def index
-        render json: self.request_user
+        render json: {tracked: self.request_user.candidate_infos}
     end
 
     private
